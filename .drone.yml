@@ -7,5 +7,5 @@ steps:
   image: dotnet/sdk:5.0
   pull: if-not-exists
   commands:
-  - dotnetcore build
+  - dotnet build
   - dotnet run --project RunHelloWorld
