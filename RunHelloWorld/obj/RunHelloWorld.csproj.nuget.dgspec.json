@@ -1,0 +1,116 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/eoinmcafee/Desktop/Code/HelloWorldCore/RunHelloWorld/RunHelloWorld.csproj": {}
+  },
+  "projects": {
+    "/Users/eoinmcafee/Desktop/Code/HelloWorldCore/CoreLibraries/CoreLibraries.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/eoinmcafee/Desktop/Code/HelloWorldCore/CoreLibraries/CoreLibraries.csproj",
+        "projectName": "CoreLibraries",
+        "projectPath": "/Users/eoinmcafee/Desktop/Code/HelloWorldCore/CoreLibraries/CoreLibraries.csproj",
+        "packagesPath": "/Users/eoinmcafee/.nuget/packages/",
+        "outputPath": "/Users/eoinmcafee/Desktop/Code/HelloWorldCore/CoreLibraries/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/eoinmcafee/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/eoinmcafee/Desktop/Code/HelloWorldCore/RunHelloWorld/RunHelloWorld.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/eoinmcafee/Desktop/Code/HelloWorldCore/RunHelloWorld/RunHelloWorld.csproj",
+        "projectName": "RunHelloWorld",
+        "projectPath": "/Users/eoinmcafee/Desktop/Code/HelloWorldCore/RunHelloWorld/RunHelloWorld.csproj",
+        "packagesPath": "/Users/eoinmcafee/.nuget/packages/",
+        "outputPath": "/Users/eoinmcafee/Desktop/Code/HelloWorldCore/RunHelloWorld/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/eoinmcafee/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/eoinmcafee/Desktop/Code/HelloWorldCore/CoreLibraries/CoreLibraries.csproj": {
+                "projectPath": "/Users/eoinmcafee/Desktop/Code/HelloWorldCore/CoreLibraries/CoreLibraries.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

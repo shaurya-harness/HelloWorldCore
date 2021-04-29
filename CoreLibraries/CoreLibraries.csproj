@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <PackageId>CoreLibraries</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Eoin McAfee</Authors>
+        <Company>Harness</Company>
+        <TargetFramework>net5.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+</Project>
