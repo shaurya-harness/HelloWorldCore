@@ -1,0 +1,11 @@
+kind: pipeline
+name: default
+type: docker
+
+steps:
+- name: build
+  image: dotnet/sdk:5.0
+  pull: if-not-exists
+  commands:
+  - dotnetcore build
+  - dotnet run --project RunHelloWorld
