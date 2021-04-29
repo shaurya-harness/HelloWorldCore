@@ -4,8 +4,7 @@ type: docker
 
 steps:
 - name: build
-  image: dotnet:5.0
+  image: dotnet
   pull: if-not-exists
   commands:
   - dotnet build
-  - dotnet run --project RunHelloWorld
