@@ -1,5 +1,5 @@
 kind: template
-load: plugin.jsonnet
+load: plugin.starlark
 data:
     stepName: build
     image: mcr.microsoft.com/dotnet/sdk:5.0
