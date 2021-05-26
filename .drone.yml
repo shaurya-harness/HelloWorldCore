@@ -1,6 +1,6 @@
 kind: template
 load: plugin.starlark
 data:
-    input.stepName: build
-    input.image: mcr.microsoft.com/dotnet/sdk:5.0
-    input.commands: dotnet build
+    stepName: build
+    image: mcr.microsoft.com/dotnet/sdk:5.0
+    commands: dotnet build
