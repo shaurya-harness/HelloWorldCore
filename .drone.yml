@@ -13,5 +13,5 @@ steps:
       pull: if-not-exists
       settings:
           log_level: debug
-          scan_uri: http://localhost:8080
+          scan_uri: http://localhost:8081
           image_name: ubuntu:14.04
