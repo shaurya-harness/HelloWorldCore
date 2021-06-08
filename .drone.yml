@@ -3,11 +3,6 @@ name: default
 type: docker
 
 steps:
-    - name: build
-      image: mcr.microsoft.com/dotnet/sdk:5.0
-      pull: if-not-exists
-      commands:
-          - dotnet build
     - name: scan
       image: eoinmcafee00/drone-container-scanner
       pull: if-not-exists
@@ -15,4 +10,4 @@ steps:
           log_level: debug
           scan_uri: http://ea3c144c953d.ngrok.io
           image_name: ubuntu:14.04
-          fail_level: none
+          fail_level: high
