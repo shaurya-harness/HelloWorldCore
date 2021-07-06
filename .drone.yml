@@ -6,9 +6,6 @@ type: docker
 steps:
   - name: build
     image: mcr.microsoft.com/dotnet/sdk:5.0
-    environment:
-      USERNAME:
-        from_secret: my-value
     pull: if-not-exists
     commands:
       - dotnet build
@@ -17,7 +14,8 @@ steps:
     pull: if-not-exists
     settings:
       log_level: debug
-      nuget_apikey: "oy2ey73rt5zc522ku2nqyr6iqf7e3tau3pxrdukyripq4a"
+      nuget_apikey:         
+        from_secret: my-value
       nuget_uri: "https://api.nuget.org/v3/index.json"
 ---      
 kind: secret
