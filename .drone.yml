@@ -6,6 +6,9 @@ type: docker
 steps:
   - name: build
     image: mcr.microsoft.com/dotnet/sdk:5.0
+    environment:
+      USERNAME:
+        from_secret: my-value
     pull: if-not-exists
     commands:
       - dotnet build
