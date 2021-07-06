@@ -1,6 +1,5 @@
-kind: template
-load: plugin.jsonnet
-data:
-  stepName: build
-  image: mcr.microsoft.com/dotnet/sdk:5.0
-  commands: dotnet build
+kind: secret
+name: my-value
+get:
+  path: kv/my-secret
+  name: my-value
