@@ -1,25 +1,6 @@
----
-kind: pipeline
-name: default
-type: docker
-
-steps:
-  - name: build
-    image: mcr.microsoft.com/dotnet/sdk:5.0
-    pull: if-not-exists
-    commands:
-      - dotnet build
-  - name: publish
-    image: drone/drone-nuget
-    pull: if-not-exists
-    settings:
-      log_level: debug
-      nuget_apikey:         
-        from_secret: my-value
-      nuget_uri: "https://api.nuget.org/v3/index.json"
----      
-kind: secret
-name: my-value
-get:
-  path: kv/my-secret
-  name: my-value
+kind: template
+load: test.starlark
+data:
+  builds:
+    - name: build1
+    - name: build2
