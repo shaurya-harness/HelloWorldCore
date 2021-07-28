@@ -1,6 +1,7 @@
 kind: template
 load: test.starlark
 data:
+  stepName: testStep
   builds:
     - name: build1
     - name: build2
