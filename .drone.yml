@@ -1,5 +1,5 @@
 kind: template
-load: test.nested.starlark
+load: test.starlark
 data:
   builds:
     - name: build
