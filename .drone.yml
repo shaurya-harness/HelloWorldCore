@@ -1,6 +1,7 @@
 kind: template
 load: test.starlark
 data:
-  stepName: build
-  image: mcr.microsoft.com/dotnet/sdk:5.0
-  commands: dotnet build
+    builds:
+      stepName: build
+      image: mcr.microsoft.com/dotnet/sdk:5.0
+      commands: dotnet build
