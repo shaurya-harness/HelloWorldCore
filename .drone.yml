@@ -3,4 +3,6 @@ load: test.starlark
 data:
   stepName: testStep
   builds:
-    - [name: build1 , image: mcr.microsoft.com/dotnet/sdk:5.0, commands: dotnet build]
+    - name: build1 
+    - image: mcr.microsoft.com/dotnet/sdk:5.0
+    - commands: dotnet build
