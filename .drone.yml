@@ -12,7 +12,7 @@ steps:
   - name: docker
     image: plugins/docker
     settings:
-      repo: eoinmcafee00/helloworldcore
+      repo: eoinmcafee/drone-test
       dockerfile: RunHelloWorld/Dockerfile
     environment:
       USERNAME:
