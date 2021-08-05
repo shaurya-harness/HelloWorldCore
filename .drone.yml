@@ -15,7 +15,7 @@ steps:
       repo: eoinmcafee/drone-test
       dockerfile: RunHelloWorld/Dockerfile
     environment:
-      USERNAME:
+      username:
         from_secret: username
-      PASSWORD:
+      password:
         from_secret: password
