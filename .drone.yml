@@ -12,7 +12,7 @@ steps:
   - name: docker
     image: plugins/docker
     settings:
-      repo: eoinmcafee00/HelloWorldCore
+      repo: eoinmcafee00/helloworldcore
       dockerfile: RunHelloWorld/Dockerfile
     environment:
       USERNAME:
