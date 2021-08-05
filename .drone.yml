@@ -1,9 +1,7 @@
 kind: template
-load: test.starlark
-data:
-  builds:
-    name: build
+load: plugin.jsonnet
+  data:
+    stepName: build
     image: mcr.microsoft.com/dotnet/sdk:5.0
-    commands: 
-      - dotnet build
+    commands: "echo -n hello"
     
