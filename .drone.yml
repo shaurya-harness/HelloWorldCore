@@ -1,6 +1,24 @@
-kind: template
-load: plugin.jsonnet
-data:
-  stepName: build
-  image: golang
-  commands: "echo -n hello"
+kind: pipeline
+name: default
+type: docker
+
+steps:
+  - name: build
+    image: mcr.microsoft.com/dotnet/sdk:5.0
+    pull: if-not-exists
+    commands:
+      - dotnet build
+
+  - name: docker
+    image: plugins/docker
+    settings:
+      username: kevinbacon
+      password: pa55word
+      repo: eoinmcafee00/HelloWorldCore
+      tags:
+        - latest
+    environment:
+      USERNAME:
+        from_secret: username
+      PASSWORD:
+        from_secret: password
