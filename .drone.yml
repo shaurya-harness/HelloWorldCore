@@ -12,7 +12,8 @@ steps:
   - name: docker
     image: plugins/docker
     settings:
-      repo: eoinmcafee00/HelloWorldCore/RunHelloWorld
+      repo: eoinmcafee00/HelloWorldCore
+      dockerfile: RunHelloWorld/Dockerfile
       tags:
         - latest
     environment:
