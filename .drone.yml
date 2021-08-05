@@ -14,8 +14,6 @@ steps:
     settings:
       repo: eoinmcafee00/HelloWorldCore
       dockerfile: RunHelloWorld/Dockerfile
-      tags:
-        - latest
     environment:
       USERNAME:
         from_secret: username
