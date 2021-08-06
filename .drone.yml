@@ -10,7 +10,7 @@ steps:
       - dotnet build
 
   - name: docker
-    image: localhost.localdomain:5000/plugins/docker-local
+    image: plugins/docker-local
     settings:
       repo: eoinmcafee/drone-test
       dockerfile: RunHelloWorld/Dockerfile
