@@ -11,7 +11,7 @@ steps:
 
   - name: docker
     pull: never
-    image: plugins/docker-local
+    image: plugins/docker
     settings:
       repo: eoinmcafee/drone-test
       dockerfile: RunHelloWorld/Dockerfile
