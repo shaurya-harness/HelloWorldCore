@@ -14,7 +14,4 @@ steps:
     settings:
       repo: eoinmcafee/drone-test
       dockerfile: RunHelloWorld/Dockerfile
-      username:
-        from_secret: username
-      password:
-        from_secret: password
+      dry_run: true
