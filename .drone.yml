@@ -15,4 +15,3 @@ steps:
       repo: eoinmcafee/drone-test
       dockerfile: RunHelloWorld/Dockerfile
       dry_run: true
-      registry: .
