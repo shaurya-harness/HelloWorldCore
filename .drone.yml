@@ -10,8 +10,8 @@ steps:
       - dotnet build
 
   - name: docker
-    pull: if-not-exists
-    image: docker-local
+    pull: never
+    image: plugins/docker
     settings:
       repo: eoinmcafee/drone-test
       dockerfile: RunHelloWorld/Dockerfile
