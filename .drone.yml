@@ -1,21 +1,8 @@
-kind: pipeline
-name: default
-type: docker
+kind: template
+load: plugin.jsonnet
 
-steps:
-  - name: build
-    image: mcr.microsoft.com/dotnet/sdk:5.0
-    pull: if-not-exists
-    commands:
-      - dotnet build
-
-  - name: docker
-    pull: never
-    image: plugins/docker
-    settings:
-      repo: eoinmcafee/drone-test
-      dockerfile: RunHelloWorld/Dockerfile
-      username:
-        from_secret: username
-      password:
-        from_secret: password
+data:
+  name: build
+  image: mcr.microsoft.com/dotnet/sdk:5.0
+  commands:
+    dotnet build
