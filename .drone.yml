@@ -1,6 +1,5 @@
 kind: template
-load: plugin.jsonnet
-
+load: plugin.yaml
 data:
   name: build
   image: mcr.microsoft.com/dotnet/sdk:5.0
