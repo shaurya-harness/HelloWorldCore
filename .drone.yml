@@ -1,8 +1,22 @@
----
-kind: template
-load: plugin.yaml
-data:
-  name: build
-  image: mcr.microsoft.com/dotnet/sdk:5.0
-  commands:
-    dotnet build
+kind: pipeline
+name: default
+type: docker
+
+steps:
+  - name: build
+    image: mcr.microsoft.com/dotnet/sdk:5.0
+    pull: if-not-exists
+    commands:
+      - dotnet build
+
+  - name: scan
+    pull: never
+    image: drone-plugins/drone-snyk
+    settings:
+      repo: eoinmcafee/drone-test
+      dockerfile: RunHelloWorld/Dockerfile
+      image: mcr.microsoft.com/dotnet/sdk:5.0
+      username:
+        from_secret: username
+      password:
+        from_secret: password
