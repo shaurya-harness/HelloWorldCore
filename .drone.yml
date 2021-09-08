@@ -17,6 +17,7 @@ steps:
       repo: eoinmcafee/drone-test
       dockerfile: RunHelloWorld/Dockerfile
       image: mcr.microsoft.com/dotnet/sdk:5.0
+      debug: true
       username:
         from_secret: username
       password:
