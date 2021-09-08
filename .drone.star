@@ -1,13 +1,19 @@
 def main(ctx):
+  return [
+    step("amd64"),
+    step("arm64"),
+  ]
+
+def step(arch):
   return {
     "kind": "pipeline",
-    "name": "build",
+    "name": "build-%s" % arch,
     "steps": [
       {
         "name": "build",
-        "image": "mcr.microsoft.com/dotnet/sdk:5.0",
+        "image": "alpine",
         "commands": [
-            "dotnet build"
+            "echo hello world"
         ]
       }
     ]

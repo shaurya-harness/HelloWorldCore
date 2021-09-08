@@ -12,6 +12,7 @@ steps:
   - name: scan
     pull: never
     image: drone-plugins/drone-snyk
+    privileged: true
     settings:
       repo: eoinmcafee/drone-test
       dockerfile: RunHelloWorld/Dockerfile
