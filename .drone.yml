@@ -21,3 +21,5 @@ steps:
         from_secret: username
       password:
         from_secret: password
+    commands:
+      - docker start
