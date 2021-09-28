@@ -13,7 +13,6 @@ steps:
     image: drone-plugins/drone-snyk
     privileged: true
     settings:
-      repo: eoinmcafee/drone-test
       dockerfile: RunHelloWorld/Dockerfile
       image: mcr.microsoft.com/dotnet/sdk:5.0
       debug: true
