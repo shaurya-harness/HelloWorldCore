@@ -2,27 +2,21 @@ kind: pipeline
 name: default
 type: docker
 
-workspace:
-  path: /drone/src
-
 steps:
   - name: build
     image: mcr.microsoft.com/dotnet/sdk:5.0
     pull: if-not-exists
     commands:
       - dotnet build
-  - name: scan
+
+  - name: docker
     pull: never
-    image: drone-plugins/drone-snyk
-    privileged: true
+    image: plugins/docker
     settings:
+      repo: eoinmcafee/drone-test
       dockerfile: RunHelloWorld/Dockerfile
-      image: mcr.microsoft.com/dotnet/sdk:5.0
-      severity: high
-      debug: true
       username:
         from_secret: username
       password:
         from_secret: password
-      snyk:
-        from_secret: snyk
+      schema: "https://gist.githubusercontent.com/eoinmcafee00/481a0f562a533da6aa4efac31eb97183/raw/cca54994d44212b4020d7139a417d5ffdb2981f4/template.json"
