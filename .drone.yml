@@ -20,3 +20,4 @@ steps:
       password:
         from_secret: password
       card_schema: "https://gist.githubusercontent.com/eoinmcafee00/481a0f562a533da6aa4efac31eb97183/raw/cca54994d44212b4020d7139a417d5ffdb2981f4/template.json"
+      file_location: "/tmp/output.json"
