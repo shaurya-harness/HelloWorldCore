@@ -2,18 +2,12 @@ kind: pipeline
 name: default
 type: kubernetes
 
-volumes:
-  - name: file
-    host:
-      path: /Users/eoinmcafee/Desktop
-
 steps:
   - name: build
     image: mcr.microsoft.com/dotnet/sdk:5.0
     pull: if-not-exists
     commands:
       - dotnet build
-
   - name: docker
     pull: never
     image: plugins/docker
@@ -26,6 +20,3 @@ steps:
         from_secret: password
       commands:
        - dotnet build
-      volumes:
-        - name: file
-          path: /Users/eoinmcafee/Desktop
