@@ -2,6 +2,11 @@ kind: pipeline
 name: default
 type: kubernetes
 
+volumes:
+  - name: file
+    host:
+      path: /Users/eoinmcafee/Desktop
+
 steps:
   - name: build
     image: mcr.microsoft.com/dotnet/sdk:5.0
@@ -19,5 +24,8 @@ steps:
         from_secret: username
       password:
         from_secret: password
-      card_schema: "https://gist.githubusercontent.com/eoinmcafee00/481a0f562a533da6aa4efac31eb97183/raw/cca54994d44212b4020d7139a417d5ffdb2981f4/template.json"
-      file_location: "/tmp/output.json"
+      commands:
+       - dotnet build
+      volumes:
+        - name: file
+          path: /Users/eoinmcafee/Desktop
