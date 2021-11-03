@@ -1,6 +1,6 @@
 kind: pipeline
 name: default
-type: docker
+type: kubernetes
 
 steps:
   - name: build
@@ -20,4 +20,3 @@ steps:
         from_secret: password
       commands:
        - dotnet build
-  
