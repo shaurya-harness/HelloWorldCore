@@ -21,6 +21,6 @@ steps:
         from_secret: username
       password:
         from_secret: password
-      snyk:
+      snyk_token:
         from_secret: snyk
       fail_error_on_step: false
