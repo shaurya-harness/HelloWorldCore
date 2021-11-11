@@ -23,3 +23,4 @@ steps:
         from_secret: password
       snyk:
         from_secret: snyk
+      fail_error_on_step: false
