@@ -8,15 +8,18 @@ steps:
     pull: if-not-exists
     commands:
       - dotnet build
-  - name: docker
+  - name: scan
     pull: never
-    image: plugins/docker
+    image: drone-plugins/drone-snyk
+    privileged: true
     settings:
       repo: eoinmcafee/drone-test
       dockerfile: RunHelloWorld/Dockerfile
+      image: mcr.microsoft.com/dotnet/sdk:5.0
+      debug: true
       username:
         from_secret: username
       password:
         from_secret: password
-      commands:
-       - dotnet build
+      snyk:
+        from_secret: snyk
