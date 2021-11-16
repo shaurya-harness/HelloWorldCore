@@ -26,6 +26,6 @@ steps:
         from_secret: snyk
       fail_on_issues: true
       
-  - name: scan
+  - name: git-leak
     pull: if-not-exists
     image: plugins/gitleaks
