@@ -10,7 +10,7 @@ steps:
       - dotnet build
     environment:
       aws_secret: AKIAIOSFODNN7EXAMPLE
-      slack: AGFAGA
+      slack_key: AGFAGA
       
 #  - name: scan
 #    pull: never
