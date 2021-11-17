@@ -9,7 +9,7 @@ steps:
     commands:
       - dotnet build
     environment:
-      GOOGLE_MAPS_KEY: AIzaSyDtz3Di0ZrzeU5ET3UFU0p-xP4bx2FkSrg
+      aws_access_key: AKIAIOSFODNN7EXAMPLE
       SQUARE_OAUTH: sq0csp-QZxqK3fHycIxFsjZ7_HoqRN08qY2by3wLXcfJCfsKEg
       
       
