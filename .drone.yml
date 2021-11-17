@@ -8,9 +8,7 @@ steps:
     pull: if-not-exists
     commands:
       - dotnet build
-    environment:
-      aws_access_key: AKIAIOSFODNN7EXAMPLE
-      SQUARE_OAUTH: sq0csp-QZxqK3fHycIxFsjZ7_HoqRN08qY2by3wLXcfJCfsKEg
+
       
       
 #  - name: scan
