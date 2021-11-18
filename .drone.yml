@@ -8,28 +8,22 @@ steps:
     pull: if-not-exists
     commands:
       - dotnet build
-    environment:
-      aws_access_key: AKIAIOSFODNN7EXAMPLE
-      SQUARE_OAUTH: sq0csp-QZxqK3fHycIxFsjZ7_HoqRN08qY2by3wLXcfJCfsKEg
       
-      
-#  - name: scan
-#    pull: never
-#    image: drone-plugins/drone-snyk
-#    privileged: true
-#    settings:
-#      dockerfile: RunHelloWorld/Dockerfile
-#      image: mcr.microsoft.com/dotnet/sdk:5.0
-#      debug: true
-#      username:
-#        from_secret: username
-#      password:
-#        from_secret: password
-#      snyk_token:
-#        from_secret: snyk
-#      fail_on_issues: false
-#      environment:
-#        aws_secret: AKIAIOSFODNN7EXAMPLE
+  - name: scan
+    pull: never
+    image: drone-plugins/drone-snyk
+    privileged: true
+    settings:
+      dockerfile: RunHelloWorld/Dockerfile
+      image: mcr.microsoft.com/dotnet/sdk:5.0
+      debug: true
+      username:
+        from_secret: username
+      password:
+        from_secret: password
+      snyk_token:
+        from_secret: snyk
+      fail_on_issues: false
       
   - name: git-leak
     pull: never
