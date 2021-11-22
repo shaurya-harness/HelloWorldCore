@@ -3,7 +3,7 @@ name: default
 type: aws
 
 pool:
-  use: ubuntu-20.04
+  use: ubuntu-18.04
 
 steps:
   - name: build
