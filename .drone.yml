@@ -2,6 +2,9 @@ kind: pipeline
 name: default
 type: aws
 
+pool:
+  use: ubuntu-20.04
+
 steps:
   - name: build
     image: mcr.microsoft.com/dotnet/sdk:5.0
