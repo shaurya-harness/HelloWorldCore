@@ -16,7 +16,7 @@ steps:
 #    pull: never
 #    image: drone-plugins/drone-snyk
 #    privileged: true
-#    settings:
+#    settings: 
 #      dockerfile: RunHelloWorld/Dockerfile
 #      image: mcr.microsoft.com/dotnet/sdk:5.0
 #      debug: true
