@@ -1,6 +1,6 @@
 kind: pipeline
 name: default
-type: aws
+type: docker
 
 pool:
   use: ubuntu
