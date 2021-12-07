@@ -2,14 +2,12 @@ kind: pipeline
 name: default
 type: docker
 
-pool:
-  use: ubuntu
-
 steps:
   - name: build
     image: mcr.microsoft.com/dotnet/sdk:5.0
     pull: if-not-exists
     commands:
+      - env
       - dotnet build
       
 #  - name: scan
