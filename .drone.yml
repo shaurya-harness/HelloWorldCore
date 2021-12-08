@@ -17,7 +17,7 @@ steps:
       api_key:
         from_secret: github_token
     depends_on:
-      - dotnet build
+      - build
 
     when:
       event: tag
