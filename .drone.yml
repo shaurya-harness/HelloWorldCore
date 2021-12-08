@@ -9,6 +9,18 @@ steps:
     commands:
       - env
       - dotnet build
+  - name: release
+    image: plugins/github-release
+    settings:
+      files:
+        - RunHelloWorld/*
+      api_key:
+        from_secret: github_token
+    depends_on:
+      - dotnet build
+
+    when:
+      event: tag
       
 #  - name: scan
 #    pull: never
