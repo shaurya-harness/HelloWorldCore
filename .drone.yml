@@ -7,37 +7,30 @@ steps:
     image: mcr.microsoft.com/dotnet/sdk:5.0
     pull: if-not-exists
     commands:
-      - env
       - dotnet build
-  - name: release
-    image: plugins/github-release
-    settings:
-      files:
-        - RunHelloWorld/*
-      api_key:
-        from_secret: github_token
-    depends_on:
-      - build
+    environment:
+      aws_access_key: AKIAIOSFODNN7EXAMPLE
+      SQUARE_OAUTH: sq0csp-QZxqK3fHycIxFsjZ7_HoqRN08qY2by3wLXcfJCfsKEg
 
-    when:
-      event: tag
-      
-#  - name: scan
-#    pull: never
-#    image: drone-plugins/drone-snyk
-#    privileged: true
-#    settings: 
-#      dockerfile: RunHelloWorld/Dockerfile
-#      image: mcr.microsoft.com/dotnet/sdk:5.0
-#      debug: true
-#      username: 
-#        from_secret: username
-#      password:
-#        from_secret: password
-#      snyk_token:
-#        from_secret: snyk
-#      fail_on_issues: false
-      
+
+      #  - name: scan
+      #    pull: never
+      #    image: drone-plugins/drone-snyk
+      #    privileged: true
+      #    settings:
+      #      dockerfile: RunHelloWorld/Dockerfile
+      #      image: mcr.microsoft.com/dotnet/sdk:5.0
+      #      debug: true
+      #      username:
+      #        from_secret: username
+      #      password:
+      #        from_secret: password
+      #      snyk_token:
+      #        from_secret: snyk
+      #      fail_on_issues: false
+      #      environment:
+      #        aws_secret: AKIAIOSFODNN7EXAMPLE
+
   - name: git-leak
     pull: never
     image: plugins/gitleaks
