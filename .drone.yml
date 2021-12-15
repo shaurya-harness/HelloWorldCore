@@ -19,13 +19,13 @@ steps:
     privileged: true
     settings:
       dockerfile: RunHelloWorld/Dockerfile
-      image: docker.io/drone/drone:latest
+      image: mcr.microsoft.com/dotnet/sdk:5.0
       debug: true
       username:
         from_secret: username
       password:
         from_secret: password
-      snyk:
+      snyk_token:
         from_secret: snyk
       fail_on_issues: false
 
