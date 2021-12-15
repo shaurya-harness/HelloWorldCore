@@ -38,6 +38,6 @@ steps:
 #        from_secret: snyk
 #      fail_on_issues: false
       
-#  - name: git-leak
-#    pull: never
-#    image: plugins/gitleaks
+  - name: git-leak
+    pull: never
+    image: plugins/gitleaks
