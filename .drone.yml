@@ -19,7 +19,7 @@ steps:
     privileged: true
     settings:
       dockerfile: RunHelloWorld/Dockerfile
-      image: mcr.microsoft.com/dotnet/sdk:5.0
+      image: docker.io/drone/drone:latest
       debug: true
       username:
         from_secret: username
