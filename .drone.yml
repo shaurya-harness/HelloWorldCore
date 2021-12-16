@@ -9,16 +9,12 @@ steps:
     commands:
       - dotnet build
 
-
-
-
   - name: scan
     pull: never
     image: drone-plugins/drone-snyk
     privileged: true
     settings:
-      dockerfile: RunHelloWorld/Dockerfile
-      image: mcr.microsoft.com/dotnet/sdk:5.0
+      image: drone/drone:latest
       debug: true
       username:
         from_secret: username
