@@ -22,7 +22,7 @@ steps:
         from_secret: password
       snyk:
         from_secret: snyk
-      fail_on_issues: false
+      fail_on_issues: true
 
   - name: git-leak
     pull: never
