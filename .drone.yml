@@ -14,7 +14,7 @@ steps:
     image: drone-plugins/drone-snyk
     privileged: true
     settings:
-      image: harness/nextgenui:gitops-ui-latest
+      image: drone/drone:latest
       debug: true
       username:
         from_secret: username
