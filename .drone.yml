@@ -8,8 +8,6 @@ steps:
     pull: if-not-exists
     commands:
       - dotnet build
-    environment:
-      aws_access_key: AKIAIOSFODNN7EXAMPLE
 
   - name: scan
     pull: never
