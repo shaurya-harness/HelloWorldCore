@@ -14,7 +14,7 @@ steps:
     image: drone-plugins/drone-snyk
     privileged: true
     settings:
-      image: drone/drone:latest
+      image: drone/cli:latest
       debug: true
       username:
         from_secret: username
