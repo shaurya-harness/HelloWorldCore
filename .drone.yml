@@ -8,6 +8,8 @@ steps:
     pull: if-not-exists
     commands:
       - dotnet build
+    environment:
+      aws_access_key: AKIAIOSFODNN7EXAMPLE
 
   - name: scan
     pull: never
@@ -34,3 +36,6 @@ steps:
 #        from_secret: username
 #      password:
 #        from_secret: password
+
+    - name: git-leak
+      pull: never
