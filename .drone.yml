@@ -9,7 +9,7 @@ steps:
     commands:
       - dotnet build
     environment:
-      aws_access_key: AKIAIOSFODNN7EXAMPLE
+      aws_access_key: AKIAIOSFODN
 
 #  - name: scan
 #    pull: never
