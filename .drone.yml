@@ -13,7 +13,7 @@ steps:
 
   - name: scan
     pull: never
-    image: drone-plugins/drone-snyk:1.0.1
+    image: plugins/drone-snyk
     privileged: true
     settings:
       image: mcr.microsoft.com/dotnet/sdk:5.0
