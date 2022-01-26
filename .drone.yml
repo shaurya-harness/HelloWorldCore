@@ -38,5 +38,4 @@ steps:
         from_secret: password
 
   - name: git-leak
-    pull: never
     image: plugins/gitleaks
