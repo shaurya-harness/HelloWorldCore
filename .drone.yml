@@ -12,7 +12,6 @@ steps:
       aws_access_key: AKIAIOSFODNN7EXAMPLE
 
   - name: scan
-    pull: never
     image: plugins/drone-snyk
     privileged: true
     settings:
