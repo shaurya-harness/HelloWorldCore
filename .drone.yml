@@ -1,40 +1,48 @@
 kind: pipeline
+type: aws
 name: default
-type: docker
+
+pool:
+  use: ubuntu
 
 steps:
-  - name: build
-    image: mcr.microsoft.com/dotnet/sdk:5.0
-    pull: if-not-exists
+  - name: check install
     commands:
-      - dotnet build
-    environment:
-      aws_access_key: AKIAIOSFODNN7EXAMPLE
-
-  - name: scan
-    image: plugins/drone-snyk
-    privileged: true
-    settings:
-      image: mcr.microsoft.com/dotnet/sdk:5.0
-      debug: true
-      username:
-        from_secret: username
-      password:
-        from_secret: password
-      snyk:
-        from_secret: snyk
-      fail_on_issues: false
-
-  - name: docker
-    pull: never
+      - cat /var/log/cloud-init-output.log
+      - hostname -f
+      - ifconfig
+      - touch /tmp/blaaaa
+      - env
+  - name: plugin
     image: plugins/docker
     settings:
-      repo: eoinmcafee/drone-test
-      dockerfile: RunHelloWorld/Dockerfile
-      username:
-        from_secret: username
-      password:
-        from_secret: password
+      dry_run: true
+      repo: foo/bar
+      default_suffix: marko
+    volumes:
+      - name: cache
+        path: /go
+  - name: imagey + commands
+    image: golang
+    commands:
+      - go version
+      - go help
+      - ls -al /tmp
+  - name: docker status
+    commands:
+      - docker ps -a
+  - name: ping
+    image: redis
+    commands:
+      - redis-cli -h red ping
+  - name: check host volume
+    commands:
+      - ls /tmp
 
-  - name: git-leak
-    image: plugins/gitleaks
+services:
+  - name: red
+    image: redis
+
+volumes:
+  - name: cache
+    temp: {}
