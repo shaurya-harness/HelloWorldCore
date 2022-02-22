@@ -13,15 +13,6 @@ steps:
       - ifconfig
       - touch /tmp/blaaaa
       - env
-  - name: plugin
-    image: plugins/docker
-    settings:
-      dry_run: true
-      repo: foo/bar
-      default_suffix: marko
-    volumes:
-      - name: cache
-        path: /go
   - name: imagey + commands
     image: golang
     commands:
