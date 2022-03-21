@@ -3,38 +3,37 @@ type: aws
 name: default
 
 pool:
-  use: windows-gcp
+  use: ubuntu-gcp
 
 steps:
   - name: check install
     commands:
-      - type C:\ProgramData\Amazon\EC2-Windows\Launch\Log\UserdataExecution.log
+      - cat /var/log/cloud-init-output.log
+      - hostname -f
+      - ifconfig
+      - touch /tmp/blaaaa
+      - env
   - name: imagey + commands
-    image: golang:1.16.5-windowsservercore-1809
+    image: golang
     commands:
       - go version
       - go help
-      - dir c:/
-      - dir c:/volumes
-    volumes:
-      - name: cache
-        path: c:/volumes
+      - ls -al /tmp
   - name: docker status
     commands:
       - docker ps -a
-      - docker network ls
-      - docker network inspect drone
-  - name: ping timeoutserver service
-    image: golang:1.16.5-windowsservercore-1809
+  - name: ping
+    image: redis
     commands:
-      - ping timeoutserver
+      - redis-cli -h red ping
+  - name: check host volume
+    commands:
+      - ls /tmp
+
+services:
+  - name: red
+    image: redis
 
 volumes:
   - name: cache
     temp: {}
-
-services:
-  - name: timeoutserver
-    image: golang:1.16.5-windowsservercore-1809
-    commands:
-      - powershell Start-Sleep -s 1800
