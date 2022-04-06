@@ -8,7 +8,7 @@ pool:
 steps:
   - name: check install
     commands:
-      - cat /var/log/cloud-init-output.log
+      - cat /home/eoinmcafeee/cloud-init-output.log
       - hostname -f
       - ifconfig
       - touch /tmp/blaaaa
