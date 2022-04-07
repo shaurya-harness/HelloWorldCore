@@ -12,6 +12,8 @@ steps:
       - ifconfig
       - touch /tmp/blaaaa
       - env
+      - whoami
+      - echo $PATH
   - name: imagey + commands
     image: golang
     commands:
