@@ -14,6 +14,7 @@ steps:
       - env
       - whoami
       - echo $PATH
+      - echo $0
   - name: imagey + commands
     image: golang
     commands:
