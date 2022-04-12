@@ -6,8 +6,10 @@ pool:
   use: osx
 
 steps:
-  - name: build
-    image: mcr.microsoft.com/dotnet/sdk:5.0
-    pull: if-not-exists
+  - name: check install
     commands:
-      - dotnet build
+      - hostname -f
+      - ifconfig
+      - touch /tmp/blaaaa
+      - env
+      - whoami
