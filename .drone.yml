@@ -3,37 +3,13 @@ type: aws
 name: default
 
 pool:
-  use: ubuntu-xenial
+  use: osx
 
 steps:
   - name: check install
     commands:
-      - cat /var/log/cloud-init-output.log
       - hostname -f
       - ifconfig
       - touch /tmp/blaaaa
       - env
-  - name: imagey + commands
-    image: golang
-    commands:
-      - go version
-      - go help
-      - ls -al /tmp
-  - name: docker status
-    commands:
-      - docker ps -a
-  - name: ping
-    image: redis
-    commands:
-      - redis-cli -h red ping
-  - name: check host volume
-    commands:
-      - ls /tmp
-
-services:
-  - name: red
-    image: redis
-
-volumes:
-  - name: cache
-    temp: {}
+      - whoami
