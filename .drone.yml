@@ -3,7 +3,7 @@ type: aws
 name: default
 
 pool:
-  use: ubuntu-xenial
+  use: osx
 
 steps:
   - name: check install
@@ -12,4 +12,4 @@ steps:
       - ifconfig
       - touch /tmp/blaaaa
       - env
-      - whoami
+      - whoamic
