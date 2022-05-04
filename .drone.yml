@@ -6,28 +6,37 @@ pool:
   use: osx-anka
 
 steps:
-  - name: install_go
+  - name: check install
     commands:
-      - brew install golang
-      - go build -o lite-engine
-  - name: server
-    detach: true
+      - hostname -f
+      - ifconfig
+      - touch /tmp/blaaaa
+      - env
+      - whoami
+      - echo $PATH
+      - echo $0
+      - cat $0
+  - name: imagey + commands
+    image: golang
     commands:
-      - touch .env
-      - echo "SERVER_HTTPS_BIND=localhost:9000" >> .env
-      - echo "CLIENT_HTTPS_BIND=localhost:9000" >> .env
-      - echo "SERVER_INSECURE=true" >> .env
-      - echo "CLIENT_INSECURE=true" >> .env
-      - echo "DEBUG=true" >> .env
-      - echo "TRACE=true" >> .env
-      - ./lite-engine server --env-file=".env"
-    depends_on:
-      - install_go
-  - name: client
+      - go version
+      - go help
+      - ls -al /tmp
+  - name: docker status
     commands:
-      - sleep 5
-      - cat .env
-      - while ! curl -sf http://localhost:9000/healthz; do sleep 1; done
-      - ./lite-engine client --env-file=".env"
-    depends_on:
-      - server
+      - docker ps -a
+  - name: ping
+    image: redis
+    commands:
+      - redis-cli -h red ping
+  - name: check host volume
+    commands:
+      - ls /tmp
+
+services:
+  - name: red
+    image: redis
+
+volumes:
+  - name: cache
+    temp: {}
