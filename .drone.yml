@@ -1,9 +1,5 @@
 kind: pipeline
-type: vm
 name: default
-
-pool:
-  use: osx-anka
 
 steps:
   - name: check install
