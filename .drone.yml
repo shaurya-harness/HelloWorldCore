@@ -2,11 +2,8 @@ kind: pipeline
 type: vm
 name: default
 
-node:
-  cluster: mac1
-
 pool:
-  use: osx-anka
+  use: anka-intel
 
 steps:
   - name: check install
