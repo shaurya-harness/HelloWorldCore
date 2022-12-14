@@ -8,6 +8,7 @@ platform:
 
 
 steps:
-  - name: check install
-    commands:
-      - uname -a
+- name: check install
+  image: golang:1.17.3
+  commands:
+    - uname -a
