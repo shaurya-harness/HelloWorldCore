@@ -1,9 +1,11 @@
 kind: pipeline
-type: vm
+type: docker
 name: default
 
-pool:
-  use: linux-arm
+platform:
+  os: linux
+  arch: arm
+
 
 steps:
   - name: check install
