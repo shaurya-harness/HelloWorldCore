@@ -13,3 +13,4 @@ steps:
   commands:
     - uname -a
     - dpkg --print-architecture
+    - lscpu
