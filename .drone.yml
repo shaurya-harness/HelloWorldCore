@@ -3,40 +3,9 @@ type: vm
 name: default
 
 pool:
-  use: anka-intel
+  use: linux-arm
 
 steps:
   - name: check install
     commands:
-      - hostname -f
-      - ifconfig
-      - touch /tmp/blaaaa
-      - env
-      - whoami
-      - echo $PATH
-      - echo $0
-      - cat $0
-  - name: imagey + commands
-    image: golang
-    commands:
-      - go version
-      - go help
-      - ls -al /tmp
-  - name: docker status
-    commands:
-      - docker ps -a
-  - name: ping
-    image: redis
-    commands:
-      - redis-cli -h red ping
-  - name: check host volume
-    commands:
-      - ls /tmp
-
-services:
-  - name: red
-    image: redis
-
-volumes:
-  - name: cache
-    temp: {}
+      - uname -a
