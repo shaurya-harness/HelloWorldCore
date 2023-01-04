@@ -3,9 +3,9 @@ type: docker
 name: default
 
 steps:
-- name: check install
-  image: golang:1.17.3
-  commands:
-    - uname -a
-    - dpkg --print-architecture
-    - lscpu
+  - name: check install
+    image: golang:1.17.3
+    commands:
+      - uname -a
+      - dpkg --print-architecture
+      - lscpu
