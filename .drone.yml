@@ -1,6 +1,5 @@
 kind: pipeline
 name: default
-type: vm
 
 steps:
   - name: check install
