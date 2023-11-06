@@ -1,47 +1,14 @@
----
-kind: pipeline
-name: pipeline-1
 
-platform:
-  os: linux
-  arch: amd64
+kind: pipeline
+name: default
+type: docker
 
 steps:
-  - name: step-1
-    image: alpine
-    commands:
-      - echo "Hello from pipeline-1"
-
-trigger:
-  ref:
-    - refs/heads/main
-    - refs/tags/**
-    - refs/pull/**
-
----
-kind: pipeline
-name: pipeline-2
-
-platform:
-  os: linux
-  arch: amd64
-
-steps:
-  - name: step-1
-    image: alpine
-    commands:
-      - echo "Hello from pipeline-2"
-
-trigger:
-  ref:
-    - refs/heads/main
-    - refs/tags/**
-    - refs/pull/**
-
-depends_on:
-  - pipeline-1
----
-kind: signature
-hmac: b0cc13e766e3618d7628a44eb6e6a9b70342b26fb595dac954691251801f9483
-
-...
+  - name: push-to-gar
+    image: plugins/gcr
+    pull: never
+    settings:
+      tag: latest
+      repo: ci-play/test/ml-service
+      json_key:
+        from_secret: gcr_json_key
