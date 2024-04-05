@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_shaurya_harness_HelloWorldCore_1712301390087-pr-trigger-input-set
+  identifier: Build_shaurya_harness_HelloWorldCore_1712301390087prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_shaurya_harness_HelloWorldCore_1712301390087
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
